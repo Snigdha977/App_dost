@@ -22,7 +22,7 @@ It keeps the same structure and layout as the original website but introduces a 
 1. Open the project folder in VS Code.
 2. Open the `index.html` file.
 3. Go to **Run → Run Without Debugging** to view it in your browser.
-
+4. OR else visit the deployed link : https://appdosti.netlify.app/
 ## Note
 
 This is not a copy or clone of the original website.
