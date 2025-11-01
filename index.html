@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AppDost - Complete IT Solution Provider</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3B82F6',
+            secondary: '#10B981',
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    /* Custom animations */
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes slide-up {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fade-in 1s ease-out; }
+    .animate-float { animation: float 2s ease-in-out infinite; }
+    .animate-float-delay { animation: float 2s ease-in-out infinite 1s; }
+    .animate-slide-up { animation: slide-up 0.5s ease-out; }
+    .animate-slide-up-delay { animation: slide-up 0.5s ease-out 0.2s both; }
+    .animate-slide-up-delay2 { animation: slide-up 0.5s ease-out 0.4s both; }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6 bg-white dark:bg-gray-800 shadow-md fixed w-full z-10">
+    <div class="text-2xl font-bold text-primary">🚀 AppDost</div>
+    <nav class="hidden md:flex space-x-6">
+      <a href="#home" class="hover:text-primary transition">Home</a>
+      <a href="#what-we-do" class="hover:text-primary transition">What We Do</a>
+      <a href="#why-choose" class="hover:text-primary transition">Why Choose Us</a>
+      <a href="#services" class="hover:text-primary transition">Services</a>
+      <a href="#portfolio" class="hover:text-primary transition">Portfolio</a>
+      <a href="#contact" class="hover:text-primary transition">Contact</a>
+    </nav>
+    <div class="flex items-center space-x-4">
+      <button id="darkModeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition" aria-label="Toggle dark mode">🌙</button>
+      <button id="signInBtn" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">Sign In</button>
+    </div>
+  </header>
+
+  <!-- Sign-In Modal -->
+  <div id="signInModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg w-96">
+      <h2 class="text-2xl font-bold mb-4 text-center">Sign In</h2>
+      <form id="signInForm" class="space-y-4">
+        <input type="email" placeholder="Email" class="w-full p-3 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
+        <input type="password" placeholder="Password" class="w-full p-3 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
+        <button type="submit" class="w-full bg-primary text-white py-3 rounded-full hover:bg-blue-700 transition">Sign In</button>
+      </form>
+      <button id="closeModal" class="mt-4 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200">Close</button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative bg-gradient-to-r from-primary to-secondary text-white py-32 px-6 pt-24">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-5xl font-bold mb-4 animate-fade-in">Transform Your Ideas Into Digital Reality</h1>
+      <p class="text-xl mb-8">Your trusted partner for comprehensive IT solutions. From mobile apps to enterprise software, we bring innovation and excellence to every project.</p>
+      <button id="getStartedBtn" class="bg-white text-primary px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition animate-bounce">Get Started</button>
+    </div>
+    <div class="absolute top-10 left-10 w-16 h-16 bg-white opacity-20 rounded-full animate-float"></div>
+    <div class="absolute bottom-10 right-10 w-20 h-20 bg-white opacity-20 rounded-full animate-float-delay"></div>
+  </section>
+
+  <!-- What We Do -->
+  <section id="what-we-do" class="py-20 px-6 bg-white dark:bg-gray-800">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-12">💻 What We Do</h2>
+      <p class="text-center mb-8">Our Core Expertise</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition animate-slide-up">
+          <div class="text-6xl mb-4">🎨</div>
+          <h3 class="text-2xl font-semibold mb-2">UI/UX Design Excellence</h3>
+          <p>Crafting intuitive designs for great user satisfaction.</p>
+        </div>
+        <div class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition animate-slide-up-delay">
+          <div class="text-6xl mb-4">💻</div>
+          <h3 class="text-2xl font-semibold mb-2">Custom Software Development</h3>
+          <p>Scalable solutions tailored to your needs.</p>
+        </div>
+        <div class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition animate-slide-up-delay2">
+          <div class="text-6xl mb-4">🌐</div>
+          <h3 class="text-2xl font-semibold mb-2">Web Application Development</h3>
+          <p>Responsive apps using latest technologies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why-choose" class="py-20 px-6 bg-gray-50 dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-12">🌟 Why Choose AppDost?</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="text-6xl mb-4">✅</div>
+          <h3 class="text-2xl font-semibold mb-2">Complete Lifecycle Expertise</h3>
+          <p>From ideation to deployment.</p>
+        </div>
+        <div class="text-center">
+          <div class="text-6xl mb-4">✅</div>
+          <h3 class="text-2xl font-semibold mb-2">Cutting-Edge Technology</h3>
+          <p>Latest tools and frameworks.</p>
+        </div>
+        <div class="text-center">
+          <div class="text-6xl mb-4">✅</div>
+          <h3 class="text-2xl font-semibold mb-2">Agile Development</h3>
+          <p>Fast iterations and feedback.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Services -->
+  <section id="services" class="py-20 px-6 bg-white dark:bg-gray-800">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-12">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md">
+          <div class="text-6xl mb-4">📱</div>
+          <h3 class="text-2xl font-semibold mb-2">Android App Development</h3>
+          <p>Custom Android apps with Play Store deployment.</p>
+        </div>
+        <div class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md">
+          <div class="text-6xl mb-4">🌐</div>
+          <h3 class="text-2xl font-semibold mb-2">Web Development</h3>
+          <p>Responsive web apps and e-commerce.</p>
+        </div>
+        <div class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md">
+          <div class="text-6xl mb-4">🎨</div>
+          <h3 class="text-2xl font-semibold mb-2">UI/UX Development</h3>
+          <p>Beautiful interfaces for engagement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio (Expanded with Real Links) -->
+  <section id="portfolio" class="py-20 px-6 bg-gray-50 dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-12">Our Portfolio</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+          <h3 class="text-2xl font-semibold mb-2">BEU Mate</h3>
+          <p>AI-powered educational platform for personalized learning. Features include chatbots, study materials, and progress tracking.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Technologies: React Native, Node.js, AI/ML</p>
+          <a href="https://play.google.com/store/apps/details?id=com.appdost.beumate" target="_blank" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">Download on Play Store</a>
+          <a href="https://github.com/appdost" target="_blank" class="ml-4 text-primary hover:underline">View on GitHub</a>
+        </div>
+        <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+          <h3 class="text-2xl font-semibold mb-2">The Weddings Chapter</h3>
+          <p>A comprehensive wedding planning portal connecting couples with vendors, planners, and services.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Technologies: PHP, Laravel, MySQL</p>
+          <a href="https://theweddingschapter.com" target="_blank" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">View Project</a>
+          <a href="https://github.com/appdost" target="_blank" class="ml-4 text-primary hover:underline">View on GitHub</a>
+        </div>
+        <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+          <h3 class="text-2xl font-semibold mb-2">Open Source Projects</h3>
+          <p>Various open-source projects on GitHub, including tools for developers and educational resources.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Technologies: JavaScript, Python, etc.</p>
+          <a href="https://github.com/appdost" target="_blank" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">View on GitHub</a>
+        </div>
+        <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+          <h3 class="text-2xl font-semibold mb-2">Custom Mobile Apps</h3>
+          <p>Multiple Android and iOS apps developed for clients, including e-commerce and utility apps.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Technologies: Flutter, React Native</p>
+          <a href="https://appdost.in/portfolio" target="_blank" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">View Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies -->
+  <section class="py-20 px-6 bg-white dark:bg-gray-800">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-12">Technologies We Master</h2>
+      <div class="flex flex-wrap justify-center space-x-6">
+        <span class="bg-primary text-white px-4 py-2 rounded-full">⚛️ React</span>
+        <span class="bg-primary text-white px-4 py-2 rounded-full">🟢 Node.js</span>
+        <span class="bg-primary text-white px-4 py-2 rounded-full">🐍 Python</span>
+        <span class="bg-primary text-white px-4 py-2 rounded-full">☁️ AWS</span>
+        <span class="bg-primary text-white px-4 py-2 rounded-full">📱 Flutter</span>
+        <span class="bg-primary text-white px-4 py-2 rounded-full">🗄️ MongoDB</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ready to Start -->
+  <section class="py-20 px-6 bg-primary text-white text-center">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
+      <p class="text-xl mb-8">Let's discuss how we can transform your ideas.</p>
+      <button id="contactUsBtn" class="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:shadow-xl transition">Contact Us</button>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 px-6 bg-white dark:bg-gray-800">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-12">Contact Us</h2>
+      <form id="contactForm" class="space-y-6">
+        <input type="text" id="name" placeholder="Your Name" class="w-full p-3 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
+        <input type="email" id="email" placeholder="Your Email" class="w-full p-3 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
+        <textarea id="message" placeholder="Your Message" class="w-full p-3 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white" rows="5" required></textarea>
+        <button type="submit" class="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition">Send Message</button>
+      </form>
+      <p id="formMessage" class="mt-4 text-center"></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 px-6 bg-gray-800 dark:bg-black text-white">
+    <div class="max-w-6xl mx-auto text-center">
+      <p>&copy; 2023 AppDost. All rights reserved.</p>
+      <div class="flex justify-center space-x-4 mt-4">
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="Twitter">🐦</a>
+        <a href="#" aria-label="LinkedIn">💼</a>
+      </div>
+    </div>
+  </footer>
+
+    <script>
+      // Dark mode toggle
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      const body = document.body;
+  
+      darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        darkModeToggle.textContent = body.classList.contains('dark') ? '☀️' : '🌙';
+      });
+  
+      // Sign-In Modal
+      const signInBtn = document.getElementById('signInBtn');
+      const signInModal = document.getElementById('signInModal');
+      const closeModal = document.getElementById('closeModal');
+      const signInForm = document.getElementById('signInForm');
+  
+      signInBtn.addEventListener('click', () => {
+        signInModal.classList.remove('hidden');
+      });
+  
+      closeModal.addEventListener('click', () => {
+        signInModal.classList.add('hidden');
+      });
+  
+      signInForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Demo feedback for sign-in (replace with real auth)
+        alert('Signed in (demo).');
+        signInModal.classList.add('hidden');
+        signInForm.reset();
+      });
+  
+      // Contact form handling
+      const contactForm = document.getElementById('contactForm');
+      const formMessage = document.getElementById('formMessage');
+  
+      if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          // Simple client-side feedback; replace with real submission
+          formMessage.textContent = 'Message sent! We will contact you soon.';
+          formMessage.classList.remove('text-red-500');
+          formMessage.classList.add('text-green-500');
+          contactForm.reset();
+        });
+      }
+  
+      // Smooth scroll for CTAs
+      const getStartedBtn = document.getElementById('getStartedBtn');
+      const contactUsBtn = document.getElementById('contactUsBtn');
+  
+      getStartedBtn?.addEventListener('click', () => {
+        document.getElementById('what-we-do').scrollIntoView({ behavior: 'smooth' });
+      });
+  
+      contactUsBtn?.addEventListener('click', () => {
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      });
+  
+      // Close modal when clicking outside
+      signInModal.addEventListener('click', (e) => {
+        if (e.target === signInModal) {
+          signInModal.classList.add('hidden');
+        }
+      });
+  
+    </script>
+  </body>
+  </html>
